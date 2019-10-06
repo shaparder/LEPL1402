@@ -6,7 +6,7 @@ public class StringUtils {
      * for example split("test-test", '-') => {"test", "test"}
      * Must return null if there is no occurrence of 'marker' in 'str'
      */
-    public static String[] split(String str, char marker){
+    public static String[] split(String str, char marker) {
 		String[] split;
 		int len = str.length();
 		int delim_count = 0;
@@ -40,7 +40,7 @@ public class StringUtils {
      * or -1 if there is no occurrence of sub in str at all.
      * Be careful, we ask you to make CASE SENSITIVE comparison between str and sub.
      */
-    public static int indexOf(String str, String sub){
+    public static int indexOf(String str, String sub) {
 		int	x = 0;
 		int	y = 0;
 		if (str.length() <= 0 || sub.length() <= 0)
@@ -78,7 +78,7 @@ public class StringUtils {
 	 * Returns true if the string 'str' is a palindrome (a string that reads the same from
 	 * left to right AND from right to left).
 	 */
-	public static boolean palindrome(String str){
+	public static boolean palindrome(String str) {
 		for (int i = 0; i < str.length()/2; i++) {
 			if (str.charAt(i) != str.charAt(str.length() - i - 1))
 				return false;
@@ -87,14 +87,14 @@ public class StringUtils {
 	}
 
 	public static void main(String[] args) {
-		// String str = "prout. i. got. it.";
-		// char delim = '.';
-		// String[] arrtest = split(str, delim);
-		// for(String s: arrtest){
-		// 	System.out.println(s);
-		// }
-		// System.out.println(indexOf("bitebitebote", "bote"));
-		// System.out.println(toLowerCase("bitebiteAAhjHgFdfF"));
+		String str = "prout. i. got. it.";
+		char delim = '.';
+		String[] arrtest = split(str, delim);
+		for(String s: arrtest){
+			System.out.println(s);
+		}
+		System.out.println(indexOf("bitebitebote", "bote"));
+		System.out.println(toLowerCase("bitebiteAAhjHgFdfF"));
 		System.out.println(palindrome("strrts"));
 		System.out.println(palindrome("kayak"));
 		System.out.println(palindrome("prout"));
