@@ -85,23 +85,23 @@ public class IntroductionExercises {
 			}
 		}
 		// test print
-		attribute(1);
-		System.out.println(variable);
-		System.out.println(add(variable, 2));
-		System.out.println(equalsIntegers(variable, 1));
-		System.out.println(equalsIntegers(variable, 2));
-		System.out.println(middleValue(5, 2, 4));
-		System.out.println(max(variable, -1));
-		System.out.println(greetings("Evening"));
-		System.out.println("square1:");
-		for (int i = 0; i < squares.length; i++)
-			System.out.print(squares[i] + " ");
-		squares = lastFirstMiddle(squares);
-		System.out.println("square2:");
-		for (int i = 0; i < squares.length; i++)
-			System.out.print(squares[i] + " ");
-		System.out.println("square3:");
-		System.out.println(sum(squares));
-		System.out.println(maxArray(squares));
+		// attribute(1);
+		// System.out.println(variable);
+		// System.out.println(add(variable, 2));
+		// System.out.println(equalsIntegers(variable, 1));
+		// System.out.println(equalsIntegers(variable, 2));
+		// System.out.println(middleValue(5, 2, 4));
+		// System.out.println(max(variable, -1));
+		// System.out.println(greetings("Evening"));
+		// System.out.println("square1:");
+		// for (int i = 0; i < squares.length; i++)
+		// 	System.out.print(squares[i] + " ");
+		// squares = lastFirstMiddle(squares);
+		// System.out.println("square2:");
+		// for (int i = 0; i < squares.length; i++)
+		// 	System.out.print(squares[i] + " ");
+		// System.out.println("square3:");
+		// System.out.println(sum(squares));
+		// System.out.println(maxArray(squares));
 	}
 }

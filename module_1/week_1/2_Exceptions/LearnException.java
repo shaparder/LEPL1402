@@ -33,7 +33,7 @@ public class LearnException {
 		return msg;
 	}
 
-	public static void main(String[] args) {
-		System.out.println(betterCanDivide(1, 0));
-	}
+	// public static void main(String[] args) {
+		// System.out.println(betterCanDivide(1, 0));
+	// }
 }
