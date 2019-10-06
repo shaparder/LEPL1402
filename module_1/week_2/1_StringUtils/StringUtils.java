@@ -62,18 +62,29 @@ public class StringUtils {
 	}
 
 
-    // public static String toLowerCase(String str){
+	public static String toLowerCase(String str){
+		char[] s = str.toCharArray();
 
-    // }
+		for (int i = 0; i < str.length(); i++) {
+			if (s[i] >= 'A' && s[i] <= 'Z'){
+				s[i] += 32;
+			}
+		}
+		return String.copyValueOf(s);
+	}
 
 
-    /*
-     * Returns true if the string 'str' is a palindrome (a string that reads the same from
-     * left to right AND from right to left).
-     */
-    // public static boolean palindrome(String str){
-
-    // }
+	/*
+	 * Returns true if the string 'str' is a palindrome (a string that reads the same from
+	 * left to right AND from right to left).
+	 */
+	public static boolean palindrome(String str){
+		for (int i = 0; i < str.length()/2; i++) {
+			if (str.charAt(i) != str.charAt(str.length() - i - 1))
+				return false;
+		}
+		return true;
+	}
 
 	public static void main(String[] args) {
 		// String str = "prout. i. got. it.";
@@ -82,7 +93,10 @@ public class StringUtils {
 		// for(String s: arrtest){
 		// 	System.out.println(s);
 		// }
-		System.out.println(indexOf("bitebitebote", "bote"));
+		// System.out.println(indexOf("bitebitebote", "bote"));
+		// System.out.println(toLowerCase("bitebiteAAhjHgFdfF"));
+		System.out.println(palindrome("strrts"));
+		System.out.println(palindrome("kayak"));
+		System.out.println(palindrome("prout"));
 	}
-
 }
