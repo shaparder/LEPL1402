@@ -1,6 +1,4 @@
-import 1_TreeSame.Node;
-
-public class Tree extends Node {
+public class Tree {
 
 	public Node root;
 
