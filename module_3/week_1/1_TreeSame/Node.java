@@ -18,12 +18,7 @@ public class Node {
 			return false;
 		if (this == o)
 			return true;
-		try {
-			Node cmp = (Node) o;
-			
-		} catch (Exception e) {
-			return false;
-		}
+		Node cmp = (Node) o;
 		if (this.isLeaf() && cmp.isLeaf())
 			return this.val == cmp.val;
 		else if (this.isLeaf() || cmp.isLeaf())

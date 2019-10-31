@@ -1,4 +1,6 @@
-public class Tree {
+import 1_TreeSame.Node;
+
+public class Tree extends Node {
 
 	public Node root;
 
@@ -12,11 +14,7 @@ public class Tree {
 			return false;
 		if (this == o)
 			return true;
-		try {
 		Tree cmp = (Tree)o;
-		} catch (Exception e) {
-			return false;
-		}
 		if (this.root == null && cmp.root == null)
 			return true;
 		else if (this.root == null || cmp_root)
@@ -24,5 +22,4 @@ public class Tree {
 		else
 			return this.root.equals(cmp.root);
 	}
-
 }
