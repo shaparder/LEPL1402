@@ -15,7 +15,7 @@ public class Tree {
 		Tree cmp = (Tree)o;
 		if (this.root == null && cmp.root == null)
 			return true;
-		else if (this.root == null || cmp_root)
+		else if (this.root == null || cmp.root == null)
 			return false;
 		else
 			return this.root.equals(cmp.root);
