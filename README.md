@@ -1,4 +1,4 @@
-# LEPL1402 | Informatic
+# LEPL1402 | Computer Science
 
 BAC2 course in Java8. Mastering OOP, Functional Programming, Complexity, Design Patterns/Architecture, Parallelism and more.
 
