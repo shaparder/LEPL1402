@@ -1,0 +1,22 @@
+.DS_Store
+*.class
+
+# Intellij
+.idea/**
+**/.idea/**
+
+# VS Code
+.vscode/**
+**/.vscode/**
+
+# Eclipse
+.settings/**
+**/.settings/**
+
+# Java
+**/out/**
+**/target/**
+**/libs/**
+
+.DS_Store
+**/.DS_Store
