@@ -1,4 +1,6 @@
+import java.awt.*;
 import java.util.Iterator;
+import java.util.NoSuchElementException;
 import java.util.function.Function;
 import java.util.function.Predicate;
 
@@ -52,14 +54,21 @@ public abstract class FList<A> implements Iterable<A> {
 
     public Iterator<A> iterator() {
         return new Iterator<A>() {
-            // Do whatever you want here
+
+            private FList<A> list = FList.this;
 
             public boolean hasNext() {
-                // TODO
+               return list.length() > 0;
             }
 
             public A next() {
-                // TODO
+                if (hasNext()) {
+                    A nxt = list.head();
+                    list = list.tail();
+                    return nxt;
+                } else {
+                    throw  new NoSuchElementException();
+                }
             }
 
             public void remove() {
@@ -68,14 +77,87 @@ public abstract class FList<A> implements Iterable<A> {
         };
     }
 
-
+    // empty list methods etc
     private static final class Nil<A> extends FList<A> {
         public static final Nil<Object> INSTANCE = new Nil();
-        //TODO
+
+        @Override
+        public int length() {
+            return 0;
+        }
+
+        @Override
+        public boolean isEmpty() {
+            return true;
+        }
+
+        @Override
+        public A head() {
+            throw new NoSuchElementException();
+        }
+
+        @Override
+        public FList<A> tail() {
+            throw new NoSuchElementException();
+        }
+
+        @Override
+        public <B> FList<B> map(Function<A, B> f) {
+            return FList.nil();
+        }
+
+        @Override
+        public FList<A> filter(Predicate<A> f) {
+            return FList.nil();
+        }
+
+
     }
 
+    // immutable list implementation
     private static final class Cons<A> extends FList<A> {
-        // TODO
+        A head;
+        FList<A> tail;
+        int length;
+
+        Cons(A head, FList<A> tail) {
+            this.head = head;
+            this.tail = tail;
+            this.length = tail.length() + 1;
+        }
+
+        @Override
+        public int length() {
+            return length;
+        }
+
+        @Override
+        public boolean isEmpty() {
+            return false;
+        }
+
+        @Override
+        public A head() {
+            if (isEmpty()) throw new NoSuchElementException();
+            else return head;
+        }
+
+        @Override
+        public FList<A> tail() {
+            if (isEmpty()) throw new NoSuchElementException();
+            else return tail;
+        }
+
+        @Override
+        public <B> FList<B> map(Function<A, B> f) {
+            return new Cons<B>( f.apply( head ), tail.isEmpty() ? FList.nil() : tail.map( f ) );
+        }
+
+        @Override
+        public FList<A> filter(Predicate<A> f) {
+            return f.test( head ) ? new Cons<A>(head, tail.isEmpty() ? FList.nil() : tail.filter( f )) : tail.isEmpty() ? FList.nil() : tail.filter( f );
+        }
+
     }
 
 }
